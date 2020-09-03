@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <title>INVENTORY MANAGEMENT SYSTEM</title>
+    
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Data Table -->
+    <link href="table/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- Select -->
+    <link href="select/select.min.css" rel="stylesheet">
+    <link href="select/bootstrap-select.min.css" rel="stylesheet">
+
+    <link href="css/new_style.css" rel="stylesheet">
+
+</head>
+
+<body class="fix-header fix-sidebar card-no-border body-bg">
+
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-sm navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <div class="top-logo" style="width:50px;">
+                        <a class="navbar-brand" href="#">
+                            <!-- Logo icon -->
+                            <b>
+
+                                <!-- Light Logo icon -->
+                                <img src="img/spanlogo1.png" alt="logo" class="light-logo" />
+                            </b>
+                            <!--End Logo icon -->
+                        </a>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item">
+                            <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item top-header">Inventory Management System</li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Admin -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-secret"></i>Admin</a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-sign-in"></i>Last Login</a>
+                                        <ul>
+                                            <li class="login-text">
+                                                <span>2018-03-06 18:45:01</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user"></i> My Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-bell"></i> Notifications</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-cog"></i> Setting</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-sign-out"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- User -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>User</a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-sign-in"></i>Last Login</a>
+                                        <ul>
+                                            <li class="login-text">
+                                                <span>2018-03-06 18:45:01</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user"></i> My Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-bell"></i> Notifications</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-cog"></i> Setting</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-sign-out"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="header-name">
+            <h3> Inventory Management System
+
+            </h3>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li >
+                            <a  href="dashbord.html" aria-expanded="false">
+                                <i class="fa fa-tachometer"></i>
+                                <span class="hide-menu">Dashboard </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="user_mgmt_table.html" aria-expanded="false">
+                                <i class="fa fa-users"></i>
+                                <span class="hide-menu">User Management </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="role_mgmt_table.html" aria-expanded="false">
+                                <i class="fa fa-gg-circle"></i>
+                                <span class="hide-menu">Role Management </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-archive"></i>
+                                <span class="hide-menu">Project Management</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="project_mgmt_category.html">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="project_mgmt_suppliers.html">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="master_category.html">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="master_Suppliers.html">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">BOTTOM</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid user-top">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Masters Suppliers</h3>
+                    </div>
+                    
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <!-- <div class="form_section">
+                    <div class="form-content">
+                        <h4 class="form_content_title">Search User</h4>
+                        <table id="example" class="table table-striped table-bordered table-borderless  thead-light  table-responsive   nowrap table-hover"
+                            style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>First name</th>
+                                    <th>Last name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                    <th>Extn.</th>
+                                    <th>E-mail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tiger</td>
+                                    <td>Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                                    <td>5421</td>
+                                    <td>t.nixon@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Garrett</td>
+                                    <td>Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>2011/07/25</td>
+                                    <td>$170,750</td>
+                                    <td>8422</td>
+                                    <td>g.winters@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Ashton</td>
+                                    <td>Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>2009/01/12</td>
+                                    <td>$86,000</td>
+                                    <td>1562</td>
+                                    <td>a.cox@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger</td>
+                                    <td>Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                                    <td>5421</td>
+                                    <td>t.nixon@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Garrett</td>
+                                    <td>Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>2011/07/25</td>
+                                    <td>$170,750</td>
+                                    <td>8422</td>
+                                    <td>g.winters@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Ashton</td>
+                                    <td>Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>2009/01/12</td>
+                                    <td>$86,000</td>
+                                    <td>1562</td>
+                                    <td>a.cox@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger</td>
+                                    <td>Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                                    <td>5421</td>
+                                    <td>t.nixon@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Garrett</td>
+                                    <td>Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>2011/07/25</td>
+                                    <td>$170,750</td>
+                                    <td>8422</td>
+                                    <td>g.winters@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Ashton</td>
+                                    <td>Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>2009/01/12</td>
+                                    <td>$86,000</td>
+                                    <td>1562</td>
+                                    <td>a.cox@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger</td>
+                                    <td>Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                                    <td>5421</td>
+                                    <td>t.nixon@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Garrett</td>
+                                    <td>Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>2011/07/25</td>
+                                    <td>$170,750</td>
+                                    <td>8422</td>
+                                    <td>g.winters@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Ashton</td>
+                                    <td>Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>2009/01/12</td>
+                                    <td>$86,000</td>
+                                    <td>1562</td>
+                                    <td>a.cox@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger</td>
+                                    <td>Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                                    <td>5421</td>
+                                    <td>t.nixon@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Garrett</td>
+                                    <td>Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>2011/07/25</td>
+                                    <td>$170,750</td>
+                                    <td>8422</td>
+                                    <td>g.winters@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Ashton</td>
+                                    <td>Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>2009/01/12</td>
+                                    <td>$86,000</td>
+                                    <td>1562</td>
+                                    <td>a.cox@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger</td>
+                                    <td>Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                                    <td>5421</td>
+                                    <td>t.nixon@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Garrett</td>
+                                    <td>Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>2011/07/25</td>
+                                    <td>$170,750</td>
+                                    <td>8422</td>
+                                    <td>g.winters@datatables.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Ashton</td>
+                                    <td>Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>2009/01/12</td>
+                                    <td>$86,000</td>
+                                    <td>1562</td>
+                                    <td>a.cox@datatables.net</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
+                </div> -->
+
+
+
+
+
+
+            </div>
+
+            <!-- Row -->
+            <!-- ============================================================== -->
+
+
+            <!-- footer -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <footer class="footer"> © Span Engineers </footer>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="js/sticky-kit.min.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/jQuery.style.switcher.js"></script>
+    <!-- Date Picker -->
+    <script src="js/bootstrap-datepicker.js"></script>
+    <!-- Select -->
+    <script src="select/select.full.min.js"></script>
+    <script src="select/custom.js"></script>
+    <script src="select/bootstrap-select.min.js"></script>
+
+    <!-- DATA TABLE -->
+    <script src="table/jquery.dataTables.min.js"></script>
+    <script src="table/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+    <script src="js/custom.menu.js"></script>
+</body>
+
+</html>

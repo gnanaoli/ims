@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+     <!-- Favicon icon -->
+     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+     <title>INVENTORY MANAGEMENT SYSTEM</title>
+     
+     <link href="css/styles.css" rel="stylesheet">
+     <!-- Data Table -->
+     <link href="table/dataTables.bootstrap4.min.css" rel="stylesheet">
+     <!-- Select -->
+     <link href="select/select.min.css" rel="stylesheet">
+     <link href="select/bootstrap-select.min.css" rel="stylesheet">
+ 
+     <link href="css/new_style.css" rel="stylesheet">
+
+</head>
+
+<body class="fix-header fix-sidebar card-no-border body-bg">
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-sm navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header justify-content-center">
+
+                    <div class="top-logo" style="width:50px;">
+                        <a class="navbar-brand" href="index.html">
+                            <!-- Logo icon -->
+                            <b>
+
+                                <!-- Light Logo icon -->
+                                <img src="img/spanlogo1.png" alt="logo" class="light-logo" />
+                            </b>
+                            <!--End Logo icon -->
+                        </a>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item">
+                            <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item top-header">Inventory Management System</li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Admin -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-secret"></i>Admin</a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-sign-in"></i>Last Login</a>
+                                        <ul>
+                                            <li class="login-text">
+                                                <span>2018-03-06 18:45:01</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user"></i> My Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-bell"></i> Notifications</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-cog"></i> Setting</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-sign-out"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- User -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>User</a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-sign-in"></i>Last Login</a>
+                                        <ul>
+                                            <li class="login-text">
+                                                <span>2018-03-06 18:45:01</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user"></i> My Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-bell"></i> Notifications</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-cog"></i> Setting</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-sign-out"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="header-name">
+            <h3> Inventory Management System</h3>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li >
+                            <a  href="dashbord.html" aria-expanded="false">
+                                <i class="fa fa-tachometer"></i>
+                                <span class="hide-menu">Dashboard </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="user_mgmt_table.html" aria-expanded="false">
+                                <i class="fa fa-users"></i>
+                                <span class="hide-menu">User Management </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="role_mgmt_table.html" aria-expanded="false">
+                                <i class="fa fa-gg-circle"></i>
+                                <span class="hide-menu">Role Management </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-archive"></i>
+                                <span class="hide-menu">Project Management</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="project_mgmt_category.html">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="project_mgmt_suppliers.html">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="master_category.html">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="master_Suppliers.html">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="hide-menu">Masters</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-ul"></i>Category</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user-plus"></i>Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-database"></i>Warehouse</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid user-top">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">USER MANAGEMENT</h3>
+                    </div>
+
+
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="form_section">
+                    <div class="form-content create_form">
+                        <h4 class="form_content_title">Create User</h4>
+                        <form class="form-inline">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col_md text-center">
+                                    <div class="">
+                                        <label for="email">Supplier Name:</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                    <div class="">
+                                        <label for="pwd"> Date:</label>
+                                        <div class="input-group date" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-provide="datepicker">
+                                            <div class="input-group-addon inner-addon right-addon ">
+                                                <i class="fa fa-calendar"></i>
+                                                <input type="text" id="" class="form-control" placeholder="Date" name="joiningDate" id="joiningDate" readonly required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <label for="pwd">Country:</label>
+                                        <input type="password" class="form-control" id="pwd">
+                                    </div>
+                                    <div class="">
+                                        <label for="pwd">Address 1 :</label>
+                                        <input type="password" class="form-control" id="pwd">
+                                    </div>
+
+                                    <div class="">
+                                        <label for="pwd"> Area / Landmark:</label>
+                                        <input type="password" class="form-control" id="pwd">
+                                    </div>
+                                    <div class="">
+                                        <label for="pwd"> City:</label>
+                                        <input type="password" class="form-control" id="pwd">
+                                    </div>
+                                    <div class="single_select_box">
+                                        <label for="pwd"> State:</label>
+                                        <!-- <select class="selectpicker">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                              </select> -->
+                                              
+                                              <select class="selectpicker" data-style="form-control ">
+                                                    <option>Mustard</option>
+                                                    <option>Ketchup</option>
+                                                    <option>Relish</option>
+                                                </select>
+                                    </div>
+
+                                    <div class="single_select_box">
+                                            <label for="pwd"> Year</label>
+                                            <div class="select_box_two">
+                                                  <select class="selectpicker" data-style="form-control ">
+                                                        <option>Year</option>
+                                                        <option>2017</option>
+                                                        <option>2018</option>
+                                                    </select>
+                                                    <select class="selectpicker" data-style="form-control ">
+                                                            <option>Month</option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                        </select>
+                                                </div>
+                                        </div>
+
+
+
+                                    <div class="">
+                                        <label for="pwd"> Date:</label>
+                                        <div class="input-group date" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-provide="datepicker">
+                                            <div class="input-group-addon inner-addon right-addon ">
+                                                <i class="fa fa-calendar"></i>
+                                                <input type="text" id="" class="form-control" placeholder="Date" name="joiningDate" id="joiningDate" readonly required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-6 col-sm-6 col_md text-center">
+                                    <div class="">
+                                        <label for="email">Supplier Name:</label>
+                                        <div class="new-select-option">
+                                            <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                                <option>Select</option>
+                                                <option value="4">Afghanistan</option>
+                                                <option value="248">Åland Islands</option>
+                                                <option value="8">Albania</option>
+                                                <option value="12">Algeria</option>
+                                                <option value="16">American Samoa</option>
+                                              
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="">
+                                        <label for="pwd"> Check Box:</label>
+                                        <div class="new-check-button">
+                                            <input id="basic_checkbox_1" class="filled-in" type="checkbox">
+                                            <label for="basic_checkbox_1">Check Box1</label>
+                                            <input id="basic_checkbox_2" class="filled-in" type="checkbox">
+                                            <label for="basic_checkbox_2">Check Box2</label>
+                                            <input id="basic_checkbox_3" class="filled-in" type="checkbox">
+                                            <label for="basic_checkbox_3">Check Box3</label>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="">
+                                        <label for="pwd"> Check Box Inline</label>
+                                        <div class="new-check-button-inline">
+                                            <input id="basic_checkbox_4" class="filled-in" type="checkbox">
+                                            <label for="basic_checkbox_4">Check 1</label>
+                                            <input id="basic_checkbox_5" class="filled-in" type="checkbox">
+                                            <label for="basic_checkbox_5">Check 2</label>
+                                            <input id="basic_checkbox_6" class="filled-in" type="checkbox">
+                                            <label for="basic_checkbox_6">Check 3</label>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="">
+                                        <label for="pwd"> Radio Button</label>
+                                        <div class="new-radio-button">
+                                            <input name="group1" class="with-gap" id="radio_4" type="radio">
+                                            <label for="radio_4">Radio 1 </label>
+                                            <input name="group1" id="radio_5" class="with-gap" type="radio">
+                                            <label for="radio_5">Radio 2</label>
+                                            <input name="group1" id="radio_6" class="with-gap" type="radio">
+                                            <label for="radio_6">Radio 3</label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="">
+                                        <label for="pwd"> Radio Button Inline</label>
+                                        <div class="new-radio-button-inline">
+                                            <input name="group2" class="with-gap" id="radio_1" type="radio">
+                                            <label for="radio_1">Radio 1</label>
+                                            <input name="group2" id="radio_2" class="with-gap" type="radio">
+                                            <label for="radio_2">Radio 2</label>
+                                            <input name="group2" id="radio_3" class="with-gap" type="radio">
+                                            <label for="radio_3">Radio 3</label>
+
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                               
+                                <div class="col-12 submit_col text-center">
+                                    <button class="btn btn-primary">
+                                        <i class="fa fa-check"></i>SAVE</button>
+                                    <button class="btn btn-warning">
+                                        <i class="fa fa-close"></i>CANCEL</button>
+                                </div>
+
+                               
+                                 
+
+
+                                    
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row -->
+            <!-- ============================================================== -->
+
+
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> © Span Engineers </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="js/sticky-kit.min.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/jQuery.style.switcher.js"></script>
+    <!-- Date Picker -->
+    <script src="js/bootstrap-datepicker.js"></script>
+    <!-- Select -->
+    <script src="select/select.full.min.js"></script>
+    <script src="select/custom.js"></script>
+    <script src="select/bootstrap-select.min.js"></script>
+
+    <!-- DATA TABLE -->
+    <script src="table/jquery.dataTables.min.js"></script>
+    <script src="table/dataTables.bootstrap4.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+    
+</body>
+
+</html>
